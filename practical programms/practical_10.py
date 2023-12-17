@@ -1,21 +1,26 @@
 import math
 
 class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+    def __init__(self, x1, y1, x2, y2):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
 
-    def distance(self, other):
-        dx = self.x - other.x
-        dy = self.y - other.y
-        return math.sqrt(dx*dx + dy*dy)
+    def distance(self):
+        dx = self.x1 - self.x2
+        dy = self.y1 - self.y2
+        dist=dx**2 + dy**2
+        return math.sqrt(dist)
 
-    def __str__(self):
-        return f"Point({self.x}, {self.y})"
-
+    
+x1=2
+y1=3
+x2=4
+y2=6
 # creating two point objects
-point1 = Point(2, 3)
-point2 = Point(4, 6)
+Point=point(x1,y1,x2,y2)
+
 
 # printing the distance between the two points
-print(f"The distance between {point1} and {point2} is {point1.distance(point2)}")
+print(f"The distance between ({x1},{y1}) and ({x2},{y2}) is {Point.distance()}")
