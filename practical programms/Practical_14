@@ -1,0 +1,19 @@
+def check_name():
+    name = input("Please enter your name: ")
+
+    if  name.isdigit():
+        
+        if not name.isalpha and name.isdigit:
+            raise Exception("Name is contains numbers.") 
+        else:
+            raise Exception("Name is contains special characters")  
+         
+    
+
+
+while True:
+    try:
+        check_name()
+        break
+    except ValueError as ve:
+        print(ve)
