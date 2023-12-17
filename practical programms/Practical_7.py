@@ -1,19 +1,16 @@
-def find_occurrences(text, pattern):
-    occurrences = []
-    text_length = len(text)
-    pattern_length = len(pattern)
-    
-    for i in range(text_length - pattern_length + 1):
-        if text[i:i+pattern_length] == pattern:
-            occurrences.append(i)
-    
-    if not occurrences:
+def find_indices(string2):
+    string1="Hello coders to welcome to new coders guidlenes, here you will meet new coders"
+    indices = []
+    index = string1.find(string2)
+
+    while index != -1:
+        indices.append(index)
+        index = string1.find(string2, index + 1)
+
+    if len(indices) == 0:
         return -1
     else:
-        return occurrences
+        return indices
 
-text = 'ABABDABACDABABCABAB'
-pattern = 'ABABCABAB'
-
-result = find_occurrences(text, pattern)
-print(result)
+# Test the function
+print(find_indices("coders")) #output=[6,31,72]
